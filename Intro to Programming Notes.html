@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="notes.css">
+  	<title>Intro to Programming Nanodegree Notes</title>
+</head>
+
+<body>
+	 <div class = flex>
+	 	<div class = main-header ID='#Top'>Andy May - Notes so far...</div>
+	 	<div><img src="Andy.jpg" alt="Picture of Andy!"></div>
+	 </div>
+	 <div class = header>Contents</div>
+	 	<div class = subheader>
+	 		<a href="#Basics">1. Basics </a><br>
+	 		<a href="#HTML"> 2. HTML </a><br>
+	 		<a href="#Boxes"> 3. Boxes </a><br>
+	 		<a href="#CSS"> 4. CSS </a><br>
+	 		<a href="#Python_CS_Intro"> 5. Python and Computer Science Intro </a><br>
+			<a href="#V_S_R"> 6. Variables, Strings and Functions</a><br>
+	 		<a href="#Lists">7. Lists</a><br>
+	 		<a href="#ProblemSolving">8. Problem Solving</a><br>
+	 	</div>
+	 <div class= header ID="Basics">Basics</div>
+		<div class = text>
+			<p>The internet is full of lots of servers hosting web pages which are basically HTML (HyperText Markup Language) documents my browser can interpet and present to me.<br> HTML is made up of <b>Tags, Attributes and Elements</b>. Some tags are <b><em>inline</em></b> and some tags are <b><em>block</em></b>, the latter of which essentially puts a 'box' around the content allowing for additional specific formatting. <strong>DIV</strong> is an example of a <strong>block</strong> element, whereas <strong>SPAN</strong> is an example of an <strong>inline</strong> element, but both are <em>container</em> elements. Usually an opening TAGs will need a closing TAG except in the case of <strong>void</strong> tags such as "img" or "br", void tags do not require a corresponding closing tag.
+			</p>
+			<p>
+			HTML Tags can reference text, images, audio, video or even just plain old text - all filetypes can exist on the internet! <br><br>Two of the most important things to remember from the first lesson<br><b>1. Computers are Stupid!</b><em> Computers need very specific instructions and will perform exactly what you ask for, they cannot make intuitive guesses (Well, maybe with AI but that is waaaay out of scope!)</em><br><b><strong>2. It's ok to forget!</strong></b> <em>It is not possible for everyone to remember everything, but what is important is to have knowledge of the existence of the subject matter so you know where to start looking.</em>
+			</p>
+			<p><a href = "#Top">TOP</a></p>
+	</div>
+	 <div class = header ID="HTML">HTML</div>
+		<div class = text>
+			<p>
+				HTML is at the heart of the internet and can be thought of in 4 different elements
+			</p>
+				<ol>
+					<li>Text Content - This is what you <strong>SEE</strong>
+					<li> Markup - What it <strong>LOOKS LIKE</strong>
+					<li> Refrences - Links to images, videos or other documents.
+					<li> Links to other HTML Pages!
+				</ol>
+				<ul>
+					<li>Web pages are made up of rectangles, but remember that not all are visible.</li>
+					<li>HTML Controls the <b>structure</b> of a web page whereas CSS controls the <b>style</b> of the page and both are 'languages'.</li>
+					<li>When programmers talk about the <b>DOM</b> they are talking about the structure of the page</li>
+					<li>Browsers take the HTML Tag and turn them into elements of a tree</li>
+					<li><b>Boxes</b> are defined with DIV tags</li>
+					<li>Use <b>CLASS</b> attributes to define styles</li>
+					<li>HTML tags can belong to multiple classes</li>
+					<li>Use SPAN and DIV to group related content together</li>
+				</ul>
+			<p><a href = "#Top">TOP</a></p>
+	</div>
+	 <div class = header ID="Boxes">Boxes</div>
+	<div class = subheader>The Box Model</div>
+		<div class = text>
+			<p> When creating a structured document you must first divide everything up into boxes and define those boxes with <b>DIV</b> tags. You can also give each element a <b>CLASS</b> attribute so that you can easily apply styles afterwards. Tag's can belong to multiple Classes.
+			</p>
+			<p>Boxes have 4 elements: 
+			</p>
+				<ol>
+					<li>Margin</li>	
+					<li>Border</li>
+					<li>Padding</li>
+					<li>Content</li>
+				</ol>
+				<br>
+			<p> The code <b>box-sizing:border-box</b> will allow you to set the size of the total box including the border and margin, which makes it much easier to determine the actual size of the box rather than just the content. In addition, you can choose to set the size in terms of percentage of screen rather than defined pixel count!<br>
+			</p>
+			<p><a href = "#Top">TOP</a></p>
+	</div>
+	<div class = subheader >Box Positioning</div>
+		<div class = text>
+			<p> DIV's are BLOCK elements, so by default they will take up the whole width of the page. Adding the rule "display:flexi;" to the appropriate CSS will override this behaviour and let DIV's appear next to each other.<br>
+			<br>
+			</p>
+			<p> When creating web sites the procedue to follow is: <b>Code</b> --> <b>Test</b> --> <b>Refine</b>.
+			</p>
+				<ol>
+					<li>Look for narural boxes</li>
+					<li>Look for repeated styles</li>
+					<li>Write your HTML</li>
+					<li>Apply Styles (biggest to smallest)</li>
+					<li>Fix things</li>
+				</ol>
+			<p>
+			You can also use developer tools in Chrome to test changes on the fly without having to change the code each time. If it goes wrong, just hit F5 and it will refresh to the saved HTML.
+			</p>
+			<p><a href = "#Top">TOP</a></p>
+		</div>
+	<div class = header ID="CSS">CSS</div>
+		<div class = text>
+			<p>CSS (Cascading Style Sheets) allows you to add style to the website or text and correctly structured will allow programmers to avoid repitition. We do not want to have to repeat the same style code over and over again since it wastes time, is difficult to manage and susceptible to errors. What we want is for the code to <b><em>cascade</em></b> through the site and only well structured code will allow that!<br><br>
+			There is a CSS library available to use by following this <a href="https://developer.mozilla.org/en-us/docs/web/CSS">link</a>.<br><br>
+			CSS can be stored either in the HTML or within a separate CSS file of it's own, which is usually the better option for all but the most basic of sites. If you do have a separate CSS file you must locate this within the same folder as the HTML file referencing it. To reference it, in the HEAD tag include the stylesheet "link" reference line. (Type link and hit tab!)
+			</p>
+			<p><a href = "#Top">TOP</a></p>
+		</div>
+	<div class = header ID="Python_CS_Intro">Python and Computer Science Intro</div>
+		<div class = text>
+			<p>Sometimes it can be difficult to know where to start with a computer program as there is so much to complete. First you must break down the problem into smaller pieces and tackle each as their own entity. With code you can precicely describe the steps required to solve the problem and these steps can be completed by a computer! <b><em>A computer is just a machine that can be programmed</em></b>, and it can do almost anything so long as a program is written that can tell it what to do!
+			<br><br>
+			Remember that a program really is nothing more that a very specific set of instructions.
+			</p>
+			<p> At first it may seem strange that we need new languanges in order to tell a computer what do to, but this is due to a number of inherant problems with languages such as English; primarily they are too ambiguous and verbose! So there are a number of programming languages out there to learn that will enable a person to write instructions, or a "program", that will tell a computer what to do.
+			</p>
+			<p>Python is a relatively each programming lanugage to start learning and that is what we are going to do next. Writing code in Python means it can be understood by anybody who knows the Python language, but for a computer to understand it the python code must me translated into something a machine can understand. That is what the Python <b>interpreter</b> does, which incidentally is also a <b>program</b>. Python like any other lanuague has a highly defines structure and grammer, which means you must write your code exactly how the Python interpreter expects (or understands it). This of course removes the problem of amiguity.
+			</p>
+			<p>An interesting fact to remember is a "Nanostick!". This is physicaly representation of approximately 30 centimeters, which is how far light (or electricity) can travel in 1 nanosecond. A modern processor of say 2.7GHz is performing about 2.7 Billion cycles per second, which means in the time it takes for just 1 cycle light will travel around 11 centimeters; there are 2.7 cycles per nanosecond.
+			</p>
+			<p><a href = "#Top">TOP</a></p>
+		</div>
+<div class = header ID="V_S_R">Variables, Strings and Functions</div>
+	<div class = subheader>Variables</div>
+		<div class = text>
+			<p>Using a Veriable you can create a name and assign a value to that name. The value of the variable can change depending on what you assign to it, and that assignement may change during code execution i.e. "variables can vary". You use the name of the variable within your code statements, and the execution result will look at the value currently held by that variable. <br> You assign a variable by: Name = Expression.<br><br>
+			Also remember that when working with programming languages, "=" does not mean equal to. Instead it means "asssignment"! In addition, common practice suggests that variables should never start with a Capital letter.<br>
+		</p>
+	</div>
+	<div class = subheader>Strings</div>
+		<div class = text>
+			<p>A string is a sequence of characters and can be enclosed between either single or double quotes, the only stipulation is that you must always close the string with the same option you take to open the string with. Without quotes Python will see the text as a variable instead of a string which will cause an error! Interestingly it is actually possile to multiply stings, which will actually just print the string the number of times you specify i.e. 12 * "!" will result in "!!!!!!!!!!!!".<br>
+			To comment code in Python, prefix the line with a "#" character.<br>
+			<br>
+			Something really important you can do with strings is index them and work with them based on that indexing to extract just parts of the string. Each character is essentially given a number, beginning at 0 for the first.<br>
+			<br>
+			string[expression] = One character string e.g. 'udacity'[0] = 'u'
+			string[expression:expression] = from start to stop positions (stop will be -1) e.g. 'udacity'[3:5] = 'ci'
+			</p>
+			<p> 	.find is a method that can be used on strings; a method ia really just a procedure. This procedure will happen to find the startinn point of the string you are trying to find within the target string. Note that it will only ever find the first occurence and an output of -1 will mean that the string was not found. In addition, remember that the .find methos is case sensitive.<br><br>
+			You can also pass in a parameter to the .find method in order to specify the starting position, and you can store the position result in a variable. This will allow you to find additional ocurances of the string that you are searching for. <br><br>
+			For example:<br><br>
+			first = example.find('!')<br>
+			second = example.find('!',first+1)
+			</p>
+			<p> Using triple quotation marks will allow you to specify a string over multiple lines. For example:<br><br>
+				'''I am<br>
+				a sting<br>
+				sprread over<br>
+				multiple lines!<br>
+				'''<br><br>
+			</p>
+		</div>
+	<div class = subheader>Input, Function, Output</div>
+		<div class = text>
+			<p>When defining a function you will specify the name of the procedure and then within parentheses you will specifiy the name(s) of the inpute to the function. Next you will specity the return value of the procedure, for example:<br><br>
+			def rest_of_string(s):
+				return s[1:]
+			<br> This procedure will simply take a string as an input and output the same string with the first letter removed.<br>
+			Remember that any variable assignments within a function will apply within that function only, to use it outside of the funtion the result value must be included in a return value or an output. If there is no return value or output, then the function will actually do nothing at all...well, nothing that you can see anyway!<br><br>
+			A function is designe to take one or more inputs, performs a desired action upon those inputs and then produce an Output. For example, the action could be to concatenate 3 strings and you would pass in those strings to the function. For example:<br><br>
+			def concat(string1, string2, string3):
+				return string1+string2+string3
+				<br>
+			When using the procedure you would provide the strings to concatenate, such as:<br>
+			concat(Add, These, Together); this would output "AddTheseTogether" <br><br>
+			The purpose of functions is simply to save time coding repetitive actions or repeating code, you can call the function as and when you need it throughout your application.<br>
+			</p>
+			<p> This is a small function that will automatically create HMTL:<br>
+			# Write a function that takes a concept title and <br>
+			# a concept description as input and then returns<br>
+			# HTML that you can copy and paste into your notes <br>
+			# web page.<br>
+			<br>
+			def HTMLGen(title, desc):<br>
+    		return '< div class = header>'+title+'''< /div><br>
+                < div class = text'>'''+desc+'< /div>'<br>
+                <br><br>
+			print HTMLGen('Auto Gen HTML', 'This is a function to automatically create HMTL')
+			</p>
+			<p><a href = "#Top">TOP</a></p>
+		</div>
+	</div>
+	<div class = subheader>If and While</div>
+		<div class = text>
+			<p>	def bigger(a,b):<br>
+    		number = b<br>
+    		if a >= b:<br>
+        	number = a<br>
+    		return number<br>
+		    The test expression determines whether or not we will execute the code within the block.<br>
+		    When using the OR operand, if the first value equates to True then the second value is not evaluated.
+		    <br><br>
+		    The contruct of an if statement is as follows:<br>
+		    IF< expression>:<br>
+		    	< block><br><br>
+		    The block will only execute if the IF statement evaluates to TRUE.<br><br>
+		    NOTE: You MUST get the indentention correct in Python!<br>
+			</p>
+			<p> The structure of IF and WHILE LOOPS are pretty much the same, the key difference being that the IF code block will only execute once (if the test condition equates to TRUE), whilst the WHILE loop will keep executing the code block as long as the test condition continues to evaluate to TRUE.<br><br>
+			The contruct of an if statement is as follows:<br>
+		   		WHILE< expression>:<br>
+		    		< block><br><br>
+			BREAK gives us a way to stop the loop, even when the test condition is TRUE.<br>
+		   		WHILE< expression>:<br>
+		    		< block><br>
+		    		IF < Break Test><br>
+		    			break<br>
+		    		< more code><br>
+		    	< After While><br><br>
+			<p><a href = "#Top">TOP</a></p>
+			</p>
+		</div>
+		
+	<div class = subheader>Debugging!</div>
+		<div class = text>
+			<p> When using example code always test it to make sure it works properly to begin with. If you have problems and need to debug your own code, just comment it out to begin with so when you get it working you will be able to see where you went wrong to begin with and learn from it.<br><br>
+			Sometimes is is also helpful when debugging code to introduce print statements so that you can see what variables are set to at various points throughout your code. This can help identify where the problem is.<br>
+			<br>
+			Debuigging Strategy:
+			<ol>
+				<li>Examine error messages when programs crash
+				<li> Work from example code
+				<li> Make sure examples work
+				<li> Check (print) intermediate results
+				<li> Keep and compare old versions
+			</ol>
+			<br><br>
+			<p><a href = "#Top">TOP</a></p>
+		</div>
+<div class = header ID = "Lists">Lists</div>
+	<div class = text>
+		<p> A list can store a number of items separated by a comma.<br><br>
+			< list> [< expression>,< expression>,....]<br><br>
+			Remember that lists are orders, so it is important you place items in the order you want them.<br>
+			Lists can contain more lists and the data types can be mixed, where as strings can only contain characters.<br>
+			Remember that the index of the list always starts from 0.<br>
+		</p>
+		<p> Lists provide us with a way of putting data into an ordered structure and are mutable whereas strings are not. What they basically means is that <b>you can change elements within a list</b> but not a string. However, be careful because if more than one variable references the same list, changing (mutating) the list using one variable will also change the list for all other variables that reference the same list!<br><br>
+		To change a value in a list:<br>
+		p = 'H', 'e', 'l', 'l', 'o' <br>
+		p[0] = Y <br>
+		now p = 'Y', 'e', 'l', 'l', 'o'
+		<br>
+		</p>
+		<p> Two different ways of referencing the same object is called 'Aliasing'.<br><br>When altering lists within a procedure, you do no need to 'return' the result, since you will be directly mutating the list itself. The reason this does not work with string assignments is that strings are non-mutable i.e. you can't change it, so instead you change the value that the new variable in the procedure refers to, which in turn means you need to return that value from the procedure.
+		</p>
+		<p> Append will create a new element on the end of an existing list and reference the appended object. That object could be a single element, but it could equally be another list. Either way, it will only result in ONE additional element on the end of the original list.<br><br>
+		To append:<br>
+		< list>.append(< element>)<br><br>
+		Append is a method that will mutate the list it is invoked upon. It is not creating a new list and you do not need to 'return' anything, the list itself will be modified.<br><br>
+		Using "+" will actually concatenate the objects and create a new object, so the concatenation of two lists with two elements each, will result in a new list containing 4 elements. If you use this in a procedure then you would need to return the result of the concatenation otherwise nothing will be changed outside of the procedure itself.
+		<br><br>
+		len will take a list as its input and output the number of elements in that list; it will only count the outer elements.<br>
+		</p>
+	</div>
+		<div class = subheader>While and For Loops</div>
+			<div class = text>
+				<p> A while loop will continue to cycle as long as the condition is True. For example: <br><br>
+				----While [Test Expresstion]:<br>
+				--------Do Something until test is false<br>
+				----Return<br><br>
+				Can also use a "For Loops". These are similar to While loops, but instead of looking for a text condition it will repeat for every element found in the list.<br>
+				< for> <em><b>element</b></em> in < list>:<br>
+				----< block><br><br>
+				example:<br><br>
+				def sum_list(numbers):<br>
+			    	i = 0<br>
+			    	for item in numbers:<br>
+       		 		i = i + item<br>
+   				return i<br>
+				<br>
+   				print sum_list([1, 7, 4])<br>
+   				#>>> 12<br><br>
+   				Elements in a list will have an index location, starting with 0.<br>
+   				< list>.index(< value>)<br>
+   				If the value is in the list it will return the index location of the first instance of that value, otherwise it will return an error.
+   				<br><br>
+   				< value> in < list><br>
+   				Or could use "not in"<br>
+   				If the value is in the list the output is True, otherwise it is False.<br>
+   				</p>
+				<p><a href = "#Top">TOP</a></p>
+			</div>
+		</div>
+</div>
+
+<div class = header ID = "ProblemSolving">Problem Solving</div>
+	<div class = text>
+		<p><ol>
+			<li>What are the inputs?
+			<li>What are the outputs?
+			<li>Solve the problem.
+			<li> Don't optimize premeturely, keep it simple at the start!
+			<li> Develop (and test!) incrementally as you go.
+		</ol>
+		Advantage of a helper procedure is that you can re-use it for other procedures and also test it separately. It can be helpful to use an Assertion for testing using the following syntax:<br><br>
+		assert [expression] < result><br><br>
+		<p><a href = "#Top">TOP</a></p>
+
+
+	</body>
+
+</html>
